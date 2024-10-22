@@ -29,7 +29,7 @@ export class RegistrationFormComponent {
       }),
     });
   }
-  send() {
+  sendForm() {
     this.getMessage('passwordData');
   }
   correctPassword = (formC: FormControl): ValidationErrors | null => {

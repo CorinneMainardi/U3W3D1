@@ -25,16 +25,26 @@ export class RegistrationFormComponent {
       biografia: this.fb.control(''),
       passwordData: this.fb.group({
         password: this.fb.control('', [Validators.required]),
-        confermaPassword: this.fb.control('', [Validators.required]),
+        confermaPassword: this.fb.control('', [
+          Validators.required,
+          this.correctPassword,
+        ]),
       }),
     });
   }
   sendForm() {
     this.getMessage('passwordData');
   }
-  correctPassword = (formC: FormControl): ValidationErrors | null => {
-    if (this.form.password !== this.form.confermaPassword) {
-      return { invalid: true, message: 'password non coincidenti' };
+  correctPassword = () => {
+    if (this.form) {
+      if (
+        this.form.get('passwordData.password')?.value ===
+        this.form.get('passwordData.confermaPassword')?.value
+      ) {
+        return null;
+      } else {
+        return { message: 'password non coincidenti' };
+      }
     }
     return null;
   };

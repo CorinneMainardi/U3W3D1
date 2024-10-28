@@ -28,9 +28,9 @@ const routes: Routes = [
       import('./pagesMar/login-form/login-form.module').then(
         (m) => m.LoginFormModule
       ),
-  }, //questo metodo canA lo posso mettere o qui dentro a contatti oppure dentro al routing module del componente a cui voglio bloccare l'accesso
+  },
   {
-    path: 'registration',
+    path: 'registration-form',
     loadChildren: () =>
       import('./pagesMar/registration-form/registration-form.module').then(
         (m) => m.RegistrationFormModule

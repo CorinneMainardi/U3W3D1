@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { SharedComponentModule } from './shared/shared-component/shared-component.module';
 import { LoginFormComponent } from './pagesMar/login-form/login-form.component';
 import { RegistrationFormComponent } from './pagesMar/registration-form/registration-form.component';
+import { LoginFormModule } from './pagesMar/login-form/login-form.module';
+import { RegistrationFormModule } from './pagesMar/registration-form/registration-form.module';
 
 @NgModule({
   declarations: [AppComponent],
